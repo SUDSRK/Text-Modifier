@@ -32,10 +32,6 @@ export default function Navbar(props) {
       <div className="bg-warning rounded mx-2" style={{height:'30px', width:'30px', cursor:'pointer'}} onClick={() =>{props.toggleMode('warning')}}></div>  
       <div className="bg-success rounded mx-2" style={{height:'30px', width:'30px', cursor:'pointer'}} onClick={() =>{props.toggleMode('success')}}></div>  
       <div className="bg-danger rounded mx-2" style={{height:'30px', width:'30px', cursor:'pointer'}} onClick={() =>{props.toggleMode('danger')}}></div>  
-      <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}> {/*using ternary operator and template literal */}
-  <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>  {/*called togglemode props here */}
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-</div>
     </div>
   </div>
 </nav>
