@@ -26,8 +26,8 @@ export default function Navbar(props) {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form> */}
-      <span className="badge text-bg-primary" onClick={props.toggleMode}>blue</span>
-      <span className="badge text-bg-info" onClick={props.toggleMode} >Cyan</span>
+      <span className="badge text-bg-primary"  style={{cursor:'pointer'}} onClick={() =>{props.toggleMode('primary')}}>Blue</span> {/*sending a extra parameter to togglemode to change color */}
+      <span className="badge text-bg-info" style={{cursor:'pointer'}} onClick={() =>{props.toggleMode('info')}}>Cyan</span>  
       <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}> {/*using ternary operator and template literal */}
   <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>  {/*called togglemode props here */}
   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>

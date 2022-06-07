@@ -23,21 +23,26 @@ function App() {
       setalert(null);
     }, 2000)
   }
-
-const toggleMode = () =>{  //togglemode arrow function for toggling dark mode
+ const removeBodyClasses = () =>{ //arrow function for removing body classes
+   document.body.classList.remove('bg-primary')
+   document.body.classList.remove('bg-info')
+ }
+const toggleMode = (cls) =>{  //togglemode arrow function for toggling dark mode
+  removeBodyClasses(); //remove body clas because class cant be overwritten
+  document.body.classList.add('bg-' + cls) //adding cls to body to show the colour mode
   if(mode === 'light'){
     setMode('dark')
     document.body.style.backgroundColor = 'black'; // making the html body color change also
     document.body.style.color = 'white';
     showAlert('Dark Mode is Activated', 'success')
-    document.title = 'Text Utlis-Dark'
+    // document.title = 'Text Utlis-Dark'
   }
   else{
     setMode('light')
     document.body.style.backgroundColor = 'white';
     document.body.style.color = 'black';
     showAlert('Light Mode is Activated', 'success')
-    document.title = 'Text Utlis-Light'
+    // document.title = 'Text Utlis-Light'
   }
 }
 
@@ -53,10 +58,10 @@ const toggleMode = () =>{  //togglemode arrow function for toggling dark mode
 <div className="container my-3">
 <Routes>
           <Route  exact path="/about"  //use exact beacuse reacter router does partial matching   
-          element = { <About />}>
+          element = { <About mode = {mode} />}>
           </Route>
           <Route exact path="/"
-          element =  {<Textform heading= 'Enter the text to Analyze below' showAlert= {showAlert} mode= {mode}/>}>
+          element =  {<Textform heading= 'Try TextUtils, Word Counter, Character Counter, Remove Extra Spaces' showAlert= {showAlert} mode= {mode}/>}>
           </Route>
  </Routes>
 </div>
