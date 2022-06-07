@@ -51,8 +51,8 @@ const handleAltClick = () =>{   //arrow function for click handle
  </div>
  <div className="container" style={{color :  props.mode === 'dark' ? 'white' : 'black'}}>
    <h2>Your Text Summary</h2>
-   <p>{text.split(" ").filter((element) => {return element.length !== 0}).length} words ,{text.length} characters</p> {/*used high order array function (filter) to count words */}
-   <p>{text.split(" ").filter((element) => {return element.length !== 0}).length * 0.008} Minutes to Read</p>
+   <p>{text.split(/\s+/).filter((element) => {return element.length !== 0}).length} words ,{text.length} characters</p> {/*used high order array function (filter) to count words */}
+   <p>{text.split(/\s+/).filter((element) => {return element.length !== 0}).length * 0.008} Minutes to Read</p>
    <h2>Preview</h2>
    <p>{text.length>0? text : 'Enter Something to Display'}</p> {/* ternary opeartor to show the msg*/} 
  </div>
